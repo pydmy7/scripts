@@ -1,0 +1,13 @@
+add_newline = false
+
+format = """
+$character\
+$directory\
+$git_branch\
+$cmd_duration\
+"""
+
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗](bold red) '
+
