@@ -1,0 +1,1 @@
+$env:APPDATA\zellij\config.kdl
