@@ -1,1 +1,1 @@
-$env:APPDATA\zellij\config.kdl
+$env:APPDATA\zellij\config\config.kdl
