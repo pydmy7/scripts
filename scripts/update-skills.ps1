@@ -1,5 +1,12 @@
-git clone --recurse-submodules https://github.com/rygo6/Vulkan-Claude.git ~/.agent/skills/vulkan
-git submodule update --init --recursive
+$vulkanPath = "$HOME/.agent/skills/vulkan"
+if (Test-Path $vulkanPath) {
+    Push-Location $vulkanPath
+    git pull --recurse-submodules
+    git submodule update --init --recursive
+    Pop-Location
+} else {
+    git clone --recurse-submodules https://github.com/rygo6/Vulkan-Claude.git $vulkanPath
+}
 
 curl --create-dirs -o ~/.agent/skills/karpathy-guidelines/SKILL.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/skills/karpathy-guidelines/SKILL.md
 curl --create-dirs -o ~/.agent/skills/cpp-coding-standards/SKILL.md https://raw.githubusercontent.com/affaan-m/ECC/main/skills/cpp-coding-standards/SKILL.md 
